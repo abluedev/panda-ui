@@ -1,15 +1,16 @@
 import {ButtonProperties} from "./componentes/Button/properties.ts";
 import {AnchorProperties} from "./componentes/Anchor/properties.ts";
 import {JSX} from "react";
+import {ButtonsComponent} from "./componentes/Button/toTests.tsx";
 
 export interface ComponentMap {
-    ButtonComponent: ButtonProperties;
-    AnchorComponent: AnchorProperties;
+    ButtonComponent: ButtonProperties[];
+    AnchorComponent: AnchorProperties[];
 }
 
-export const properties: { [K in keyof ComponentMap]: ComponentMap[K] } = {
-    ButtonComponent: { variant: 'primary' },
-    AnchorComponent: { icon: 'potatoe' }
+export const TestComponents: { [K in keyof ComponentMap]: ComponentMap[K] } = {
+    ButtonComponent: ButtonsComponent,
+    AnchorComponent: [{ icon: 'potatoe' }]
 }
 
 export type PandaComponent = {
